@@ -1,8 +1,15 @@
 import 'package:bytebank/screens/dashboard/dashboard.dart';
-import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(BytebankApp());
+import 'models/saldo.dart';
+
+void main() => runApp(
+    ChangeNotifierProvider(
+      create: (context) => Saldo(0),
+      child: BytebankApp(),
+    )
+);
 
 class BytebankApp extends StatelessWidget {
   @override
@@ -10,7 +17,8 @@ class BytebankApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.green[900],
-        colorScheme: ColorScheme.fromSeed(seedColor:  Color.fromRGBO(71, 161, 56, 1)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromRGBO(71, 161, 56, 1)),
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.blueAccent[700],
           textTheme: ButtonTextTheme.primary,
