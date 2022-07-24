@@ -1,14 +1,19 @@
+import 'package:brasil_fields/brasil_fields.dart';
+
 class Transferencia {
-  final double valor;
-  final int numeroConta;
+  final double _valor;
+  final int _numeroConta;
 
   Transferencia(
-    this.valor,
-    this.numeroConta,
+    this._valor,
+    this._numeroConta,
   );
 
-  @override
-  String toString() {
-    return 'Transferencia{valor: $valor, numeroConta: $numeroConta}';
+  String getValor(){
+    return UtilBrasilFields.obterReal(_valor);
+  }
+
+  String getNumeroConta() {
+    return 'Conta: $_numeroConta';
   }
 }

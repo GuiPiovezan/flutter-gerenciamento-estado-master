@@ -8,5 +8,7 @@ class Transferencias extends ChangeNotifier {
 
   add(Transferencia transferencia){
     transferencias.add(transferencia);
+
+    notifyListeners();
   }
 }
